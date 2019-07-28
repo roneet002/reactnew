@@ -1,0 +1,4 @@
+.Burger{width:30%;height:250px;text-align: center;margin: auto;font-weight:bold;font-size:1.2rem}
+@media(min-width:500px) and(min-height:400px){
+.Burger{width:350px;height:300px}
+}
