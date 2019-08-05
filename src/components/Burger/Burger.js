@@ -2,16 +2,22 @@ import React from 'react';
 import  './Burger.css'
 import BurgerIngredients from './BurgerIngredients/BurgerIngredients'
 const Burger=(props)=>{
-const transformedIngredients = Object.keys(props.ingrediants).map(igKey=>{
+let transformedIngredients = Object.keys(props.ingrediants).map(igKey=>{
 return ([...Array(props.ingrediants[igKey])].map((_, i)=>{
 return( <BurgerIngredients key={igKey + i} type={igKey} />)
-
+}));
+}).reduce((arr, el)=>{
+return arr.concat(el)
+}, [])
+console.log(transformedIngredients)
+if(transformedIngredients.length ===0){
+transformedIngredients = <p>add ingrediants which you want from below list</p>
 }
-)
-);
-});
+
+
 
 console.log(transformedIngredients)
+
 return(
 
 <div className="Burger">
