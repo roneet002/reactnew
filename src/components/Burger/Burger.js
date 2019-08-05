@@ -11,7 +11,7 @@ return( <BurgerIngredients key={igKey + i} type={igKey} />)
 );
 });
 
-
+console.log(transformedIngredients)
 return(
 
 <div className="Burger">
