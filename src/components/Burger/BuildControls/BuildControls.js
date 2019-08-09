@@ -16,9 +16,9 @@ return(
     Controls.map(ctrl=>{
 return(
     <BuildControl key={ctrl.label} 
-    type={ctrl.type} 
+    
     label ={ctrl.label} 
-    ingrediant={props.added} />
+    added={()=>props.addedIngrediant(ctrl.type)} />
 )
 
     })
