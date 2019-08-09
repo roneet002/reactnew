@@ -9,6 +9,7 @@ const price_ingrediant= {
   cheese : 2,
    bacon : 2,
 }
+
 class BurgerBuilder extends Component{
     // constructor(props){
     //     super()
