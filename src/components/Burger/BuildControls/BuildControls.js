@@ -11,19 +11,23 @@ const Controls = [
 
 const BuildControls = (props)=>{
 return(
-<div className="alert alert-primary center">
+<div className="alert alert-primary center position-fixed w-100 bottom-0 mb-0">
+<p className="font-weight-bolder">Current Price : {props.price.toFixed(1)}</p>
 {
     Controls.map(ctrl=>{
 return(
-    <BuildControl key={ctrl.label} 
-    
+    <BuildControl
+    key={ctrl.label}     
     label ={ctrl.label} 
-    added={()=>props.addedIngrediant(ctrl.type)} />
+    added={()=>props.addedIngrediant(ctrl.type)}
+    removed={()=>props.removeIngrediantHandler(ctrl.type)}
+    disabled = {props.disabled[ctrl.type]}
+    />
 )
-
-    })
 }
-
+)
+}
+<button className="btn btn-primary mt-4" disabled>Order Now</button>
 </div>
 
 )
