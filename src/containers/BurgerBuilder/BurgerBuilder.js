@@ -49,7 +49,7 @@ return(
 <Auxiliary>
 <Burger ingrediants={this.state.ingrediants}/>
 <BuildControls addedIngrediant={this.addIngrediantHandler} />
-
+<button type="submit" className="btn btn-primary">Submit</button>
 
 </Auxiliary>
 
