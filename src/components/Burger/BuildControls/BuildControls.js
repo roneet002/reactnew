@@ -11,7 +11,7 @@ const Controls = [
 
 const BuildControls = (props)=>{
 return(
-<div className="alert alert-primary center position-fixed w-100 bottom-0 mb-0">
+<div className="alert alert-primary center  w-100 bottom-0 mb-0">
 <p className="font-weight-bolder">Current Price : {props.price.toFixed(1)}</p>
 {
     Controls.map(ctrl=>{
@@ -27,7 +27,9 @@ return(
 }
 )
 }
-<button className="btn btn-primary mt-4" disabled>Order Now</button>
+<button className="btn btn-primary mt-4"
+disabled={!props.purchasable}
+>Order Now</button>
 </div>
 
 )

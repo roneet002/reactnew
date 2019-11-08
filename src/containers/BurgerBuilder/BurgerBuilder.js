@@ -3,6 +3,8 @@ import Auxiliary from '../../hoc/Auxiliary';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 
+import Modal from '../../components/UI/Modal/Modal'
+
 const price_ingrediant= {
    salad : 1.2,
    meat : 2.3,
@@ -37,7 +39,7 @@ this.setState({
     totalPrice : updatePrice,
     ingrediants : updateIngrediant    
 })
-
+this.purchasableState(updateIngrediant)
 }
 removeIngrediantHandler = (type)=>{
     const oldCount = this.state.ingrediants[type]
@@ -53,9 +55,21 @@ removeIngrediantHandler = (type)=>{
         totalPrice : updatePrice,
         ingrediants : updateIngrediant    
     })
-    
+    this.purchasableState(updateIngrediant)
     }
-    
+   
+purchasableState =(ingrediants)=>{
+const sum = Object.keys(ingrediants).map((igkey)=>{
+return ingrediants[igkey]
+}).reduce((sum, el)=>{
+return sum + el
+
+}, 0)
+this.setState({
+   purchasable:sum > 0
+})
+
+    }
 
 render(){
     const disabledinfo={...this.state.ingrediants}
@@ -64,13 +78,14 @@ render(){
     }
 return(
 <Auxiliary>
+    <Modal />
 <Burger ingrediants={this.state.ingrediants}/>
-
 <BuildControls
 addedIngrediant={this.addIngrediantHandler}
 removeIngrediantHandler = {this.removeIngrediantHandler}
 disabled = {disabledinfo}
 price = {this.state.totalPrice}
+purchasable = {this.state.purchasable}
 />
 </Auxiliary>
 )
