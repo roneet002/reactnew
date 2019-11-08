@@ -80,6 +80,7 @@ return(
 <Auxiliary>
     <Modal />
 <Burger ingrediants={this.state.ingrediants}/>
+
 <BuildControls
 addedIngrediant={this.addIngrediantHandler}
 removeIngrediantHandler = {this.removeIngrediantHandler}
@@ -87,6 +88,8 @@ disabled = {disabledinfo}
 price = {this.state.totalPrice}
 purchasable = {this.state.purchasable}
 />
+
+<button type="submit" className="btn btn-primary">Submit</button>
 </Auxiliary>
 )
 }
