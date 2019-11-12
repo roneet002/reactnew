@@ -80,11 +80,6 @@ return(
 <Auxiliary>
     <Modal />
 <Burger ingrediants={this.state.ingrediants}/>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 53e8ad71e8d06fbf1bc93c5cdc365b4e14678ce5
 <BuildControls
 addedIngrediant={this.addIngrediantHandler}
 removeIngrediantHandler = {this.removeIngrediantHandler}
@@ -93,11 +88,6 @@ price = {this.state.totalPrice}
 purchasable = {this.state.purchasable}
 />
 
-<<<<<<< HEAD
-
-=======
-<button type="submit" className="btn btn-primary">Submit</button>
->>>>>>> 53e8ad71e8d06fbf1bc93c5cdc365b4e14678ce5
 </Auxiliary>
 )
 }

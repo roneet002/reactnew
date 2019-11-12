@@ -31,7 +31,7 @@ return(
 <button className="btn btn-primary mt-4"
 disabled={!props.purchasable}
 >Order Now</button>
-</div>
+    </div>
 
 )
 
