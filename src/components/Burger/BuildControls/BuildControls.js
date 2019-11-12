@@ -27,7 +27,7 @@ return(
 }
 )
 }
-<button className="btn btn-primary mt-4" disabled>Order Now</button>
+<button className="btn btn-primary mt-4" disabled={props.purchasable}>Order Now</button>
 </div>
 
 )

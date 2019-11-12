@@ -66,8 +66,6 @@ return(
 <Auxiliary>
 <Burger ingrediants={this.state.ingrediants}/>
 
-<BuildControls addedIngrediant={this.addIngrediantHandler} />
-<button type="submit" className="btn btn-primary">Submit</button>
 
 <BuildControls
 addedIngrediant={this.addIngrediantHandler}
@@ -75,6 +73,8 @@ removeIngrediantHandler = {this.removeIngrediantHandler}
 disabled = {disabledinfo}
 price = {this.state.totalPrice}
 />
+
+
 </Auxiliary>
 )
 }
